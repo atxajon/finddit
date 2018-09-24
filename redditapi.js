@@ -1,6 +1,6 @@
 export default {
   search: async (searchTerm, searchLimit, sortBy) => {
-    const urlToFetch = `http://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`;
+    const urlToFetch = `https://www.reddit.com/search.json?q=${searchTerm}&sort=${sortBy}&limit=${searchLimit}`;
     try {
       const response = await fetch(urlToFetch);
       if (response.ok) {
