@@ -20,7 +20,6 @@ searchForm.addEventListener('submit', e => {
   reddit.search(searchTerm, searchLimit, sortBy).then(
     results => {
       let output = '<div class="card-columns">';
-      console.log(results);
       results.forEach(post => {
         // Check for image
         let image = post.preview
@@ -54,12 +53,18 @@ const showMessage = (mssg, className) => {
   div.appendChild(document.createTextNode(mssg));
   const searchContainer = document.getElementById('search-container');
   const search = document.getElementById('search');
-
   searchContainer.insertBefore(div, search);
 
   // Remove alert message after 3 seconds.
-  setInterval(() => document.querySelector('.alert').remove(), 3000);
-};
+  const alertInterval = setInterval(function() {
+    const alertDisplay = document.querySelector('.alert');
+    // If we have a div.alert remove it and exit the setInterval loop.
+    if (alertDisplay !== undefined) {
+      document.querySelector('.alert').remove();
+      clearInterval(alertInterval);
+    }
+  }, 3000);
+}
 
 const truncateText = (text, limit) => {
   const shortened = text.indexOf(' ', limit);
