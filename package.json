@@ -4,11 +4,19 @@
   "description": "Reddit search app",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel src/index.html --out-dir docs",
+    "build": "parcel build src/index.html --out-dir docs --public-url ./"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "parcel-bundler": "^1.9.7"
-  }
+  },
+  "devDependencies": {
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-runtime": "^6.26.0"
+  },
+  "browserslist": [
+    "last 1 Chrome version"
+  ]
 }
