@@ -14,6 +14,9 @@ pids
 # Optional npm cache directory
 .npm
 
+# Local development folder outputed by 'npm run start'
+local
+
 # Optional REPL history
 .node_repl_history
 

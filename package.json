@@ -4,7 +4,7 @@
   "description": "Reddit search app",
   "main": "index.js",
   "scripts": {
-    "start": "parcel src/index.html --out-dir docs",
+    "start": "parcel src/index.html --out-dir local",
     "build": "parcel build src/index.html --out-dir docs --public-url ./"
   },
   "author": "",
